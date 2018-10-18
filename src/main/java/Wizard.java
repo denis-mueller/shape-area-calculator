@@ -17,13 +17,33 @@ class Wizard {
     static void calculateShapeArea(Shape shape) {
         String shapeName = shape.getClass().getSimpleName().toLowerCase();
 
-        for (String attributeName : shape.attributes.keySet()) {
-            System.out.println("Enter the " + attributeName + ":");
-            double input = scanner.nextDouble();
-            shape.setAttribute(attributeName, input);
-        }
+        scanShapeAttributes(shape);
 
         System.out.println("The " + shapeName + " has an area of " + shape.area());
+    }
+
+    private static void scanShapeAttributes(Shape shape) {
+        for (String attributeName : shape.attributes.keySet()) {
+            System.out.println("Enter the " + attributeName + ":");
+            double input = scanDoubleInput();
+            while (input <= 0) { input = reScanDoubleInput(); }
+            shape.setAttribute(attributeName, input);
+        }
+    }
+
+    private static double scanDoubleInput() {
+        double input;
+        try {
+            input = scanner.nextDouble();
+        } catch (Exception e) {
+            input = reScanDoubleInput();
+        }
+        return input;
+    }
+
+    private static double reScanDoubleInput() {
+        System.out.println("Please enter a number that is greater than zero: ");
+        return scanner.nextDouble();
     }
 
     /**
@@ -35,7 +55,7 @@ class Wizard {
         Shape shape = null;
 
         System.out.println("Which shape's area do you want to calculate?");
-        System.out.println("Valid shapes are circle and rectangle.");
+        System.out.println("Valid shapes are circle, triangle and rectangle.");
 
         while (shape == null) {
             String input = scanner.next().toLowerCase();
