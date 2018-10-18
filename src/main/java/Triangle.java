@@ -15,7 +15,7 @@ class Triangle extends Shape {
      * @return area of the triangle
      */
     double area() {
-        double baseWidth = attributes.get("basewidth");
+        double baseWidth = attributes.get("baseWidth");
         double height = attributes.get("height");
 
         return baseWidth * height / 2;
