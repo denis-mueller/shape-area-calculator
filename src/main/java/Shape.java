@@ -1,7 +1,10 @@
+import java.security.InvalidParameterException;
 import java.util.HashMap;
 import java.util.Map;
 
 abstract class Shape {
+    // TODO: I want to make this private so it cannot be accessed from outside, but I want the classes who extend this class to have access.
+    // Is this possible?
     final Map<String, Double> attributes = new HashMap<>();
 
     abstract double area();
@@ -13,6 +16,7 @@ abstract class Shape {
      * @param attributeValue value of the attribute as double
      */
     void setAttribute(String attributeName, double attributeValue) {
-        if (attributes.containsKey(attributeName)) attributes.put(attributeName, attributeValue);
+        if (attributeValue <= 0) throw new InvalidParameterException();
+        attributes.put(attributeName, attributeValue);
     }
 }
