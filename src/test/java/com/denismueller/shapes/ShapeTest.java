@@ -10,21 +10,16 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ShapeTest {
-    Shape triangle = new Triangle();
+    private final Shape triangle = new Triangle();
 
     @Test
     void setValidAttribute() {
-        assertDoesNotThrow(() -> {
-            triangle.setAttribute("height", 5);
-        });
+        assertDoesNotThrow(() -> triangle.setAttribute("height", 5));
     }
 
+    @Test
     void setInvalidAttribute() {
-        assertThrows(InvalidParameterException.class, () -> {
-            triangle.setAttribute("height", 0);
-        });
-        assertThrows(InvalidParameterException.class, () -> {
-            triangle.setAttribute("height", -10);
-        });
+        assertThrows(InvalidParameterException.class, () -> triangle.setAttribute("height", 0));
+        assertThrows(InvalidParameterException.class, () -> triangle.setAttribute("height", -10));
     }
 }
