@@ -1,9 +1,8 @@
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+package com.denismueller.shapes;
 
-import java.security.InvalidParameterException;
+import com.denismueller.shapes.Shape;
+import com.denismueller.shapes.Triangle;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,7 +12,6 @@ class TriangleTest {
      double triangleHeight = 5;
 
     @Test
-    // TODO: test attribute validity in Shape class test ( > 0 )
     void areaWithAttributes() {
         triangle.setAttribute("baseWidth", triangleBaseWidth);
         triangle.setAttribute("height", triangleHeight);

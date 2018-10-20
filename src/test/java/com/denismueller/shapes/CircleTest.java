@@ -1,9 +1,8 @@
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+package com.denismueller.shapes;
 
-import java.security.InvalidParameterException;
+import com.denismueller.shapes.Circle;
+import com.denismueller.shapes.Shape;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 

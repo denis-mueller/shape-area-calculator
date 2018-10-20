@@ -1,3 +1,8 @@
+package com.denismueller;
+
+import com.denismueller.shapes.Rectangle;
+import com.denismueller.shapes.Shape;
+import com.denismueller.shapes.Triangle;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
@@ -20,7 +25,7 @@ class WizardTest {
 
         Wizard.calculateShapeArea(rectangle);
 
-        //TODO: this isnt working yet, idk why
+        //TODO: NOT WORKING this isnt working yet, idk why
         simulateUserInput("5"); // when asked for width input
         simulateUserInput("10"); // when asked for height input
 

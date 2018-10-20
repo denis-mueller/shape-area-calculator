@@ -1,3 +1,10 @@
+package com.denismueller;
+
+import com.denismueller.shapes.Circle;
+import com.denismueller.shapes.Rectangle;
+import com.denismueller.shapes.Shape;
+import com.denismueller.shapes.Triangle;
+
 import java.util.Scanner;
 
 /**
@@ -5,7 +12,7 @@ import java.util.Scanner;
  *
  * @author Denis Müller
  */
-class Wizard {
+public class Wizard {
     private static final Scanner scanner = new Scanner(System.in);
 
     /**
@@ -14,7 +21,7 @@ class Wizard {
      *
      * @param shape Shape object whose area will be calculated.
      */
-    static void calculateShapeArea(Shape shape) {
+    public static void calculateShapeArea(Shape shape) {
         String shapeName = shape.getClass().getSimpleName().toLowerCase();
 
         scanShapeAttributes(shape);
@@ -23,7 +30,7 @@ class Wizard {
     }
 
     private static void scanShapeAttributes(Shape shape) {
-        for (String attributeName : shape.attributes.keySet()) {
+        for (String attributeName : shape.attributeNames()) {
             System.out.println("Enter the " + attributeName + ":");
             double input = scanDoubleInput();
             while (input <= 0) { input = reScanDoubleInput(); }
@@ -51,7 +58,7 @@ class Wizard {
      *
      * @return the selected shape
      */
-    static Shape selectShape() {
+    public static Shape selectShape() {
         Shape shape = null;
 
         System.out.println("Which shape's area do you want to calculate?");

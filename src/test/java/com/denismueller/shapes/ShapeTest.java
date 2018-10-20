@@ -1,3 +1,7 @@
+package com.denismueller.shapes;
+
+import com.denismueller.shapes.Shape;
+import com.denismueller.shapes.Triangle;
 import org.junit.jupiter.api.Test;
 
 import java.security.InvalidParameterException;
