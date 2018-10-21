@@ -1,4 +1,4 @@
-package com.denismueller.shapes;
+package ch.denismueller.shapeareacalculator.shapes;
 
 /**
  * The Triangle class has attributes of a triangle saved in a HashMap.

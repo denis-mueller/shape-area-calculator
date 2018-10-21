@@ -1,13 +1,12 @@
-package com.denismueller.shapes;
+package ch.denismueller.shapeareacalculator.shapes;
 
-import com.denismueller.shapes.Shape;
-import com.denismueller.shapes.Triangle;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class TriangleTest {
-     private final Shape triangle = new Triangle();
+    private final Shape triangle = new Triangle();
 
     @Test
     void areaWithAttributes() {

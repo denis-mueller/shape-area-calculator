@@ -1,4 +1,4 @@
-package com.denismueller.shapes;
+package ch.denismueller.shapeareacalculator.shapes;
 
 /**
  * The Circle class has attributes of a circle saved in a HashMap.

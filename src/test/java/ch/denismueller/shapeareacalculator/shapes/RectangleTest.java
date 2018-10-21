@@ -1,10 +1,9 @@
-package com.denismueller.shapes;
+package ch.denismueller.shapeareacalculator.shapes;
 
-import com.denismueller.shapes.Rectangle;
-import com.denismueller.shapes.Shape;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class RectangleTest {
     private final Shape rectangle = new Rectangle();
@@ -17,6 +16,7 @@ class RectangleTest {
         rectangle.setAttribute("height", rectangleHeight);
         assertEquals(50, rectangle.area());
     }
+
     @Test
     void areaWithoutAttributes() {
         assertThrows(NullPointerException.class, rectangle::area);

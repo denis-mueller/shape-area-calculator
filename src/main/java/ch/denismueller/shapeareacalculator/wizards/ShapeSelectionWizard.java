@@ -1,9 +1,9 @@
-package com.denismueller.wizards;
+package ch.denismueller.shapeareacalculator.wizards;
 
-import com.denismueller.shapes.Circle;
-import com.denismueller.shapes.Rectangle;
-import com.denismueller.shapes.Shape;
-import com.denismueller.shapes.Triangle;
+import ch.denismueller.shapeareacalculator.shapes.Circle;
+import ch.denismueller.shapeareacalculator.shapes.Shape;
+import ch.denismueller.shapeareacalculator.shapes.Rectangle;
+import ch.denismueller.shapeareacalculator.shapes.Triangle;
 
 import java.util.Scanner;
 

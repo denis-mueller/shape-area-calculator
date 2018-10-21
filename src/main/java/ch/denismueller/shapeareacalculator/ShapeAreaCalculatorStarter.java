@@ -1,12 +1,12 @@
-package com.denismueller;
+package ch.denismueller.shapeareacalculator;
 
-import com.denismueller.shapes.Shape;
-import com.denismueller.wizards.ShapeAttributesDefinitionWizard;
-import com.denismueller.wizards.ShapeSelectionWizard;
+import ch.denismueller.shapeareacalculator.shapes.Shape;
+import ch.denismueller.shapeareacalculator.wizards.ShapeAttributesDefinitionWizard;
+import ch.denismueller.shapeareacalculator.wizards.ShapeSelectionWizard;
 
 import java.util.Scanner;
 
-class Main {
+class ShapeAreaCalculatorStarter {
 
     public static void main(String[] args) {
         final Scanner scanner = new Scanner(System.in);

@@ -1,10 +1,9 @@
-package com.denismueller.shapes;
+package ch.denismueller.shapeareacalculator.shapes;
 
-import com.denismueller.shapes.Circle;
-import com.denismueller.shapes.Shape;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CircleTest {
     private final Shape circle = new Circle();
@@ -15,6 +14,7 @@ class CircleTest {
         circle.setAttribute("radius", circleRadius);
         assertEquals(25 * Math.PI, circle.area());
     }
+
     @Test
     void areaWithoutAttributes() {
         assertThrows(NullPointerException.class, circle::area);

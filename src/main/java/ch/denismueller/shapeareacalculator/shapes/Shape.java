@@ -1,4 +1,4 @@
-package com.denismueller.shapes;
+package ch.denismueller.shapeareacalculator.shapes;
 
 import java.security.InvalidParameterException;
 import java.util.HashMap;
@@ -23,9 +23,10 @@ abstract public class Shape {
 
     /**
      * Takes all the attribute names a shape has and returns them.
+     *
      * @return a {@link java.util.Set set} with all the attribute names.
      */
-    public Set<String> attributeNames(){
+    public Set<String> attributeNames() {
         return attributes.keySet();
     }
 }

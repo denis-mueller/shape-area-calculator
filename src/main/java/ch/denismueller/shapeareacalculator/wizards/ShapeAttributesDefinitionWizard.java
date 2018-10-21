@@ -1,6 +1,6 @@
-package com.denismueller.wizards;
+package ch.denismueller.shapeareacalculator.wizards;
 
-import com.denismueller.shapes.Shape;
+import ch.denismueller.shapeareacalculator.shapes.Shape;
 
 import java.util.Scanner;
 
@@ -46,7 +46,7 @@ public class ShapeAttributesDefinitionWizard extends Wizard {
 
     }
 
-    private boolean isValidInput(String input){
+    private boolean isValidInput(String input) {
         if (!isParsableToDouble(input)) return false;
 
         double inputValue = Double.parseDouble(input);
@@ -54,17 +54,17 @@ public class ShapeAttributesDefinitionWizard extends Wizard {
         return hasValidRange(inputValue);
     }
 
-    private boolean isParsableToDouble(String input){
+    private boolean isParsableToDouble(String input) {
         try {
             Double.parseDouble(input);
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
 
         return true;
     }
 
-    private boolean hasValidRange(double value){
+    private boolean hasValidRange(double value) {
         return (value > 0);
     }
 }

@@ -1,4 +1,4 @@
-package com.denismueller.shapes;
+package ch.denismueller.shapeareacalculator.shapes;
 
 /**
  * The Rectangle class has attributes of a rectangle saved in a HashMap.
