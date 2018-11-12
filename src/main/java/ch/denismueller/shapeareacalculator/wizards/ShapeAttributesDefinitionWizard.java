@@ -4,8 +4,6 @@ import ch.denismueller.shapeareacalculator.shapes.Shape;
 
 import java.util.Scanner;
 
-// TODO: better class name suggestion?
-
 /**
  * A wizard that guides the user through defining the attributes for a shape.
  */
