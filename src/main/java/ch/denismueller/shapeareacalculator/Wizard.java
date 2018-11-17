@@ -1,64 +1,54 @@
 package ch.denismueller.shapeareacalculator;
 
-import ch.denismueller.shapeareacalculator.CalculationMethods;
-import ch.denismueller.shapeareacalculator.ShapeAttribute;
-
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 import java.util.Scanner;
-import java.util.function.Function;
 
-public class Wizard {
-    Scanner scanner;
-    Map<String, ShapeAttribute> attributes;
-    Function<Map<String, ShapeAttribute>, Integer> calculationMethod;
+class Wizard {
+    private final Scanner scanner;
+    private ShapeCalculation shapeCalculation;
+
 
     public Wizard(Scanner scanner) {
         this.scanner = scanner;
-        attributes = new HashMap<>();
     }
 
-    public void run(){
-        int area = 0;
-
+    public void run() {
         System.out.println("Welcome, please enter the number of the shape you would like to calculate");
-        System.out.println("1 - Circle (using base width and height)");
+        System.out.println("1 - Triangle (using base width and height)");
+        System.out.println("2 - Triangle (using side lengths)");
+        System.out.println("3 - Triangle (using two side lengths and the angle between them)");
+        System.out.println("4 - Circle (using the radius)");
         int input = scanner.nextInt();
-        switch (input){
-            case 1: area = baseWidthCircle();
-            break;
+        switch (input) {
+            case 1:
+                shapeCalculation = ShapeCalculations.baseWidthTriangleCalculation();
+                break;
+            case 2:
+                shapeCalculation = ShapeCalculations.sidesTriangleCalculation();
+                break;
+            case 3:
+                shapeCalculation = ShapeCalculations.trigonometryTriangleCalculation();
+                break;
+            case 4:
+                shapeCalculation = ShapeCalculations.radiusCircleCalculation();
+                break;
         }
 
-        System.out.println("The area is " + Integer.toString(area) );
+        setValues(shapeCalculation.attributes());
+
+        String area = Double.toString(shapeCalculation.area());
+        System.out.println("The area is " + area);
     }
 
-    private int baseWidthCircle(){
-        calculationMethod = CalculationMethods::baseWidthCircle;
-
-        ShapeAttribute baseWidth = new ShapeAttribute(1, 9999, "Please enter a number between 1 and 9999");
-        ShapeAttribute height = new ShapeAttribute(1, 9999, "Please enter a number between 1 and 9999");
-
-        attributes.put("baseWidth", baseWidth);
-        attributes.put("height", height);
-
-        setValues(attributes);
-
-        return calculateArea();
-    }
-
-    private void setValues(Map<String, ShapeAttribute> attributes){
-        attributes.forEach((attributeName, attribute) -> {
-            System.out.println("Please enter the " + attributeName);
+    private void setValues(List<ShapeAttribute> attributes) {
+        attributes.forEach((attribute) -> {
+            System.out.println("Please enter the " + attribute.getName() + " of the shape.");
             attribute.setValue(scanner.nextInt());
 
-            while (!attribute.isValid()){
+            while (!attribute.isValid()) {
                 System.out.println(attribute.getErrorMessage());
                 attribute.setValue(scanner.nextInt());
             }
         });
-    }
-
-    private int calculateArea(){
-        return calculationMethod.apply(attributes);
     }
 }

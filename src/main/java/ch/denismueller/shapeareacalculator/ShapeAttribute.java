@@ -1,32 +1,33 @@
 package ch.denismueller.shapeareacalculator;
 
-public class ShapeAttribute {
-    private int lowerInclusiveBound;
-    private int upperInclusiveBound;
-    private String errorMessage;
-    private int value;
+class ShapeAttribute {
+    private final double lowerExclusiveBound;
+    private final double upperExclusiveBound;
+    private final String errorMessage;
+    private final String name;
+    private double value;
 
-    public ShapeAttribute(int lowerInclusiveBound, int upperInclusiveBound, String errorMessage) {
-        this.lowerInclusiveBound = lowerInclusiveBound;
-        this.upperInclusiveBound = upperInclusiveBound;
+    public ShapeAttribute(String name, double lowerExclusiveBound, double upperExclusiveBound, String errorMessage) {
+        this.name = name;
+        this.lowerExclusiveBound = lowerExclusiveBound;
+        this.upperExclusiveBound = upperExclusiveBound;
         this.errorMessage = errorMessage;
 
-        value = 0;
+        // TODO: i want to ensure that this is value needs to be set before it's defined... is there a better way to do this? (setting to null is not possible)
+        value = -999;
     }
+
+    public String getName() { return name; }
 
     public String getErrorMessage() {
         return errorMessage;
     }
 
-    public int getValue() {
-        return value;
-    }
+    public double getValue() { return value; }
 
-    public void setValue(int value) {
+    public void setValue(double value) {
         this.value = value;
     }
 
-    public boolean isValid(){
-        return lowerInclusiveBound <= value && value <= upperInclusiveBound;
-    }
+    public boolean isValid() { return lowerExclusiveBound < value && value < upperExclusiveBound; }
 }
