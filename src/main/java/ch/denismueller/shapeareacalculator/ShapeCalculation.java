@@ -9,6 +9,7 @@ import java.util.function.Function;
 public class ShapeCalculation {
     private final List<ShapeAttribute> attributes;
     private Function<Map<String, Double>, Double> calculationMethod;
+
     public ShapeCalculation() {
         attributes = new ArrayList<>();
     }

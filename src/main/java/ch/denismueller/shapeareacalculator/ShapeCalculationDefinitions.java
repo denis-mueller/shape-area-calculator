@@ -1,9 +1,11 @@
 package ch.denismueller.shapeareacalculator;
 
+import ch.denismueller.shapeareacalculator.ui_texts.UITexts;
+
 import java.util.Map;
 
 // TODO: better class name idea?
-class ShapeCalculations {
+class ShapeCalculationDefinitions {
     public static ShapeCalculation baseWidthTriangleCalculation() {
         ShapeCalculation shapeCalculation = new ShapeCalculation();
 
@@ -11,14 +13,14 @@ class ShapeCalculations {
                 UITexts.baseWidth,
                 1,
                 9999,
-                UITexts.enterNumberBetween0And1000
+                UITexts.invalidSideLengthError
         );
 
         ShapeAttribute heightAttribute = new ShapeAttribute(
                 UITexts.height,
                 1,
                 9999,
-                UITexts.enterNumberBetween0And1000
+                UITexts.invalidSideLengthError
         );
 
         shapeCalculation.attributes().add(baseWidthAttribute);
@@ -43,21 +45,21 @@ class ShapeCalculations {
                 UITexts.side1,
                 1,
                 9999,
-                UITexts.enterNumberBetween0And1000
+                UITexts.invalidSideLengthError
         );
 
         ShapeAttribute side2attribute = new ShapeAttribute(
                 UITexts.side2,
                 1,
                 9999,
-                UITexts.enterNumberBetween0And1000
+                UITexts.invalidSideLengthError
         );
 
         ShapeAttribute side3attribute = new ShapeAttribute(
                 UITexts.side3,
                 1,
                 9999,
-                UITexts.enterNumberBetween0And1000
+                UITexts.invalidSideLengthError
         );
 
         shapeCalculation.attributes().add(side1attribute);
@@ -85,21 +87,21 @@ class ShapeCalculations {
                 UITexts.side1,
                 0,
                 9999,
-                UITexts.enterNumberBetween0And1000
+                UITexts.invalidSideLengthError
         );
 
         ShapeAttribute side2attribute = new ShapeAttribute(
                 UITexts.side2,
                 0,
                 9999,
-                UITexts.enterNumberBetween0And1000
+                UITexts.invalidSideLengthError
         );
 
         ShapeAttribute angleAttribute = new ShapeAttribute(
                 UITexts.angle,
                 0,
                 180,
-                UITexts.enterValidAngle
+                UITexts.invalidAngleError
         );
 
         shapeCalculation.attributes().add(side1attribute);
@@ -128,7 +130,7 @@ class ShapeCalculations {
                 UITexts.radius,
                 0,
                 9999,
-                UITexts.enterNumberBetween0And1000
+                UITexts.invalidSideLengthError
         );
 
         shapeCalculation.attributes().add(radiusAttribute);

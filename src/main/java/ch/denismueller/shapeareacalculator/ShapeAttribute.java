@@ -17,17 +17,23 @@ class ShapeAttribute {
         value = -999;
     }
 
-    public String getName() { return name; }
+    public String getName() {
+        return name;
+    }
 
     public String getErrorMessage() {
         return errorMessage;
     }
 
-    public double getValue() { return value; }
+    public double getValue() {
+        return value;
+    }
 
     public void setValue(double value) {
         this.value = value;
     }
 
-    public boolean isValid() { return lowerExclusiveBound < value && value < upperExclusiveBound; }
+    public boolean isValid() {
+        return lowerExclusiveBound < value && value < upperExclusiveBound;
+    }
 }
