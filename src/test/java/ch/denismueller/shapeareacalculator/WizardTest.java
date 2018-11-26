@@ -14,14 +14,6 @@ public class WizardTest {
     @Rule
     public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
 
-    @Before
-    public void setUp() {
-    }
-
-    @After
-    public void tearDown() {
-    }
-
     @Test
     public void runWithValidInput() {
         Scanner scanner = new Scanner("4/5").useDelimiter("/");
@@ -81,5 +73,18 @@ public class WizardTest {
 
             assert(systemOutRule.getLog().contains(UITexts.invalidAngleError));
         }
+    }
+
+    @Test
+    public void runWithImpossibleShape() {
+            Scanner scanner = new Scanner("2/10/2/2").useDelimiter("/");
+
+            Wizard wizard = new Wizard(scanner);
+
+            try{
+                wizard.run();
+            }catch (NoSuchElementException e){}
+
+            assert(systemOutRule.getLog().contains(UITexts.impossibleAttributesError));
     }
 }

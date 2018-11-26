@@ -21,7 +21,16 @@ class Wizard {
 
         setValues(shapeCalculation.attributes());
 
+        ensureShapeValidity();
+
         displayArea();
+    }
+
+    private void ensureShapeValidity() {
+        while(!shapeCalculation.attributesValid()){
+            System.out.println(UITexts.impossibleAttributesError);
+            setValues(shapeCalculation.attributes());
+        }
     }
 
     private void displayArea() {
