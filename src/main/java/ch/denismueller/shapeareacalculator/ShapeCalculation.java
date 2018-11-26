@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
+import static java.lang.Double.NaN;
+
 public class ShapeCalculation {
     private final List<ShapeAttribute> attributes;
     private Function<Map<String, Double>, Double> calculationMethod;
@@ -24,6 +26,11 @@ public class ShapeCalculation {
 
     public double area() {
         return calculationMethod.apply(attributesAsMap());
+    }
+
+    public boolean attributesValid(){
+        if (calculationMethod.apply(attributesAsMap()).equals(NaN)) return false;
+        return true;
     }
 
     private Map<String, Double> attributesAsMap() {

@@ -22,4 +22,6 @@ public class UITexts {
     public static final String radiusCircle = "4 - Circle (using the radius)";
 
     public static final String invalidShapeSelectionError = "Please enter a number that is listed in the description above.";
+
+    public static final String impossibleAttributesError = "The combination of attributes build an impossible shape. Please select different attributes.";
 }
